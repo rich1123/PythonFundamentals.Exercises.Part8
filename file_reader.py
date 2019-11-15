@@ -6,7 +6,7 @@ import logging
 def reckless_file_reader(file_path: str) -> None:
     file = open(file_path)
     for line in file:
-        print(line)
+        print(f"{line}", end="")
     file.close()
 
 
@@ -78,16 +78,14 @@ def process_file(file) -> None:
 # The request to process the file is only issued if no exceptions occur.
 # Regardless of what took place, at the end of the function, the resource (file) is closed.
 def better_file_reader(file_path: str) -> None:
+    file = None
     try:
         file = open(file_path)
-    except (FileNotFoundError, PermissionError) as e:
+    except OSError as e:
         print("Error opening the file. Please ensure the file exists and has appropriate permissions.")
-        logging.error(e)
-    except BaseException as e:
-        print("Unknown error occurred. Please contact your admin.")
         logging.error(e)
     else:
         process_file(file)
     finally:
-        file.close()
+        file.close() if file else logging.warning("No file resource available to close.")
 
