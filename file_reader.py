@@ -11,7 +11,7 @@ def reckless_file_reader(file_path: str) -> None:
 
 
 # When an unhandled exception occurs, the application will be terminated.
-# We can avoid the this by wrapping the code in a try catch statement.
+# We can avoid the this by wrapping the code in a try statement.
 # This next function will show you what not to do.
 # Seriously, NEVER do this. This is known as eating an exceptions.
 # This anti-pattern will hide bugs in your code and cause endless headache.
@@ -24,7 +24,7 @@ def quick_way_to_get_fired(file_path: str) -> None:
 
 # Once we know our code has the potential to raise exceptions, we can handle the exception properly like the code below.
 # We can determine which exceptions are raised by
-# looking at the documentation and/or source code for the apis we interacting with.
+# looking at the documentation and/or source code for the apis we are interacting with.
 def single_exception_handling_reader(file_path: str) -> None:
     try:
         reckless_file_reader(file_path)
@@ -74,7 +74,6 @@ def process_file(file) -> None:
 
 
 # This time we provide clauses for all of the known potential issues.
-# In addition, we also provide a "catch-all" clause of all unknown potential issues.
 # The request to process the file is only issued if no exceptions occur.
 # Regardless of what took place, at the end of the function, the resource (file) is closed.
 def better_file_reader(file_path: str) -> None:
