@@ -10,7 +10,8 @@ def reckless_file_reader(file_path: str) -> None:
     file.close()
 
 
-# We can hide the stack trace from the using by wrapping the code in a try catch statement.
+# When an unhandled exception occurs, the application will be terminated.
+# We can avoid the this by wrapping the code in a try catch statement.
 # This next function will show you what not to do.
 # Seriously, NEVER do this. This is known as eating an exceptions.
 # This anti-pattern will hide bugs in your code and cause endless headache.
