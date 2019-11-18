@@ -23,3 +23,19 @@ chmod 000 locked_out_file.txt
 * Open the test class *test_file_reader.py*.
 * Execute each test in debug mode to reinforce the flow of each scenario.
 
+
+
+## Exercise 2
+
+Create a program called *tree.py*
+
+Given a file path (absolute or relative), the program should write to a file all of the contents of the directory and the child directories bellow it.
+The output file should look something like this:
+
+```python
+./file1.py
+./file2.py
+./dir1/file1_in_dir1.txt
+./dir1/file2_in_dir1.txt
+./dir3/file1_in_dir3.txt
+```
